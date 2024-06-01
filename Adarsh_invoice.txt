@@ -1,0 +1,73 @@
+Rent Bill for Adarsh
+
+Bill Date: 2024-05-06 11:06:33
+Kitta: 101
+City: Kathmandu
+Direction: North
+Area: 4 anna
+Rent: Rs. 50000 per month
+Rent Duration: 3 months
+Total Amount for Kitta 101: Rs. 150000
+Total Amount to be paid for kitta 101, : Rs. 150000
+
+Rent Bill for Adarsh
+
+Bill Date: 2024-05-06 11:06:33
+Kitta: 103
+City: Lalitpur
+Direction: South
+Area: 10 anna
+Rent: Rs. 100000 per month
+Rent Duration: 4 months
+Total Amount for Kitta 103: Rs. 400000
+Total Amount to be paid for kitta 101, 103, : Rs. 550000
+
+Rent Bill for Adarsh
+
+Bill Date: 2024-05-06 11:06:34
+Kitta: 104
+City: Bhaktapur
+Direction: West
+Area: 15 anna
+Rent: Rs. 150000 per month
+Rent Duration: 5 months
+Total Amount for Kitta 104: Rs. 750000
+Total Amount to be paid for kitta 101, 103, 104, : Rs. 1300000
+
+Return Bill for Adarsh
+
+Bill Date: 2024-05-06 11:06:47
+Kitta: 101
+City: Kathmandu
+Direction: North
+Area: 4 anna
+Rent: Rs. 50000 per month
+Return Duration: 4 months
+Fine Amount: Rs. 5000.0
+Total Amount returned for Kitta 101: Rs. 205000.0
+Total Amount left to be paid for kitta 103, 104,  without fine: Rs. 1150000
+
+Return Bill for Adarsh
+
+Bill Date: 2024-05-06 11:06:47
+Kitta: 104
+City: Bhaktapur
+Direction: West
+Area: 15 anna
+Rent: Rs. 150000 per month
+Return Duration: 5 months
+Total Amount returned for Kitta 104: Rs. 750000
+Total Amount left to be paid for kitta 103,  without fine: Rs. 400000
+
+Return Bill for Adarsh
+
+Bill Date: 2024-05-06 11:07:32
+Kitta: 103
+City: Lalitpur
+Direction: South
+Area: 10 anna
+Rent: Rs. 100000 per month
+Return Duration: 5 months
+Fine Amount: Rs. 10000.0
+Total Amount returned for Kitta 103: Rs. 510000.0
+Total Amount left to be paid for kitta without fine: Rs. 0
