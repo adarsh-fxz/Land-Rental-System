@@ -23,33 +23,22 @@ class Write:
         file_name = f"{customer_name}_invoice.txt"
 
         if os.path.exists(file_name):
-            with open(file_name, "a", encoding="utf-8") as file:
-                file.write(f"\nRent Bill for {customer_name}\n")
-                file.write(f"\nBill Date: {bill_date}\n")
-                file.write(f"Kitta: {kitta}\n")
-                file.write(f"City: {lands_data[kitta]['city']}\n")
-                file.write(f"Direction: {lands_data[kitta]['direction']}\n")
-                file.write(f"Area: {lands_data[kitta]['area']} anna\n")
-                file.write(f"Rent: Rs. {lands_data[kitta]['price']} per month\n")
-                file.write(f"Rent Duration: {duration} months\n")
-                file.write(f"Total Amount for Kitta {kitta}: Rs. {bill_amount}\n")
-                file.write(
-                    f"Total Amount to be paid for kitta {kitta_string}: Rs. {total_amount}\n")
+            mode = "a"
         else:
-            with open(file_name, "w", encoding="utf-8") as file:
-                file.write(f"Rent Bill for {customer_name}\n")
-                file.write(f"\nBill Date: {bill_date}\n")
-                file.write(f"Kitta: {kitta}\n")
-                file.write(f"City: {lands_data[kitta]['city']}\n")
-                file.write(f"Direction: {lands_data[kitta]['direction']}\n")
-                file.write(f"Area: {lands_data[kitta]['area']} anna\n")
-                file.write(f"Rent: Rs. {lands_data[kitta]['price']} per month\n")
-                file.write(f"Rent Duration: {duration} months\n")
-                file.write(f"Total Amount for Kitta {kitta}: Rs. {bill_amount}\n")
-                file.write(
-                    f"Total Amount to be paid for kitta {kitta_string}: Rs. {total_amount}\n")
-
-        return bill_amount
+            mode = "w"
+            
+        with open(file_name, mode, encoding="utf-8") as file:
+            file.write(f"Rent Bill for {customer_name}\n")
+            file.write(f"\nBill Date: {bill_date}\n")
+            file.write(f"Kitta: {kitta}\n")
+            file.write(f"City: {lands_data[kitta]['city']}\n")
+            file.write(f"Direction: {lands_data[kitta]['direction']}\n")
+            file.write(f"Area: {lands_data[kitta]['area']} anna\n")
+            file.write(f"Rent: Rs. {lands_data[kitta]['price']} per month\n")
+            file.write(f"Rent Duration: {duration} months\n")
+            file.write(f"Total Amount for Kitta {kitta}: Rs. {bill_amount}\n")
+            file.write(
+                f"Total Amount to be paid for kitta {kitta_string}: Rs. {total_amount}\n")
 
     @staticmethod
     def generate_return_invoice(lands_data, kitta, customer_name, rent_duration,
@@ -87,3 +76,19 @@ class Write:
             file.write(f"Total Amount left to be paid for kitta {kitta_string}without fine: Rs. {total_amount}\n")
 
             return total_amount
+        
+    @staticmethod
+    def update_file(file_name, kitta, status, new_status):
+        """
+        Function to update the status of the land in the lands.txt file.
+        """ 
+        
+        with open(file_name, "r", encoding="utf-8") as file:
+            lines = file.readlines()
+
+        with open(file_name, "w", encoding="utf-8") as file:
+            for line in lines:
+                if kitta in line:
+                    line = line.replace(status, new_status)
+                file.write(line)
+

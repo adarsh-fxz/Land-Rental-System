@@ -63,6 +63,7 @@ class Operations:
                     Operations.kitta_duration[kitta] = duration
                     Write.generate_rent_invoice(Operations.lands_data, kitta, customer_name, duration, Operations.total_amount, Operations.kitta_string)
                     print(f"Land {kitta} rented to {customer_name} for {duration} months.")
+                    Write.update_file(FILE_NAME, kitta, "Available", "Not Available")
 
                 else:
                     print(f"Land {kitta} is not available for rent.")
@@ -96,6 +97,7 @@ class Operations:
                         amount = Write.generate_return_invoice(Operations.lands_data, kitta, customer_name, rent_duration, return_duration, Operations.total_amount, Operations.kitta_string)
                         Operations.total_amount = amount
                         print(f"Land {kitta} returned by {customer_name} after {return_duration} months.")
+                        Write.update_file(FILE_NAME, kitta, "Not Available", "Available")
                     else:
                         print(f"Land {kitta} not rented by {customer_name}.")
                 else:
